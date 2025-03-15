@@ -174,7 +174,7 @@ def detect_sensitive_folders(url):
 # will then (try to) detect the version of the plugin/theme
 def iterate_directory_listing(url, content):
     print("[!] Directory listing on folder!")
-    soup = BeautifulSoup(content)
+    soup = BeautifulSoup(content, features="html.parser")
     links_to_plugins = soup('a')
     for link in links_to_plugins:
         # grabbing the folder of the plugin
