@@ -465,6 +465,7 @@ else:
         detect_version(req)
 
     if opts.detect_plugins or opts.bruteforce_plugins_file is not None:
+        req = requests.get(url)
         display_message("[-] Trying to detect plugins in Header")
         detect_plugins_in_header(req)
         if not detect_folder_for_themes_and_plugins(url, True):
